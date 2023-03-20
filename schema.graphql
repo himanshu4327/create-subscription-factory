@@ -1,0 +1,41 @@
+type BuyToken @entity(immutable: true) {
+  id: Bytes!
+  userAddress: Bytes! # address
+  subscriptionAddress: Bytes! # address
+  commited: BigInt! # uint256
+  commitmentRatio: BigInt! # uint256
+  at: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CancelledPresale @entity(immutable: true) {
+  id: Bytes!
+  subscriptionAddress: Bytes! # address
+  CancelledTime: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CreatedPresale @entity(immutable: true) {
+  id: Bytes!
+  owner: Bytes! # address
+  presaleAddress: Bytes! # address
+  launchpadType: Int! # uint8
+  createdTime: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UpdatedPresale @entity(immutable: true) {
+  id: Bytes!
+  owner: Bytes! # address
+  subscriptionAddress: Bytes! # address
+  UpdatedTime: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

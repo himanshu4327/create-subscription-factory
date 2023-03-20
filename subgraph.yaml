@@ -1,0 +1,33 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: CREATESUBSCRIPTION
+    network: bsc
+    source:
+      address: "0xB87c4e8C03c126434400707160918f08E7100727"
+      abi: CREATESUBSCRIPTION
+      startBlock: 27913883
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - BuyToken
+        - CancelledPresale
+        - CreatedPresale
+        - UpdatedPresale
+      abis:
+        - name: CREATESUBSCRIPTION
+          file: ./abis/ CREATESUBSCRIPTION.json
+      eventHandlers:
+        - event: BuyToken(indexed address,indexed address,uint256,uint256,uint256)
+          handler: handleBuyToken
+        - event: CancelledPresale(indexed address,uint256)
+          handler: handleCancelledPresale
+        - event: CreatedPresale(indexed address,indexed address,indexed uint8,uint256)
+          handler: handleCreatedPresale
+        - event: UpdatedPresale(indexed address,indexed address,uint256)
+          handler: handleUpdatedPresale
+      file: ./src/createsubscription.ts
