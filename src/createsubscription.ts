@@ -3,7 +3,7 @@ import {
   CancelledPresale as CancelledPresaleEvent,
   CreatedPresale as CreatedPresaleEvent,
   UpdatedPresale as UpdatedPresaleEvent
-} from "../generated/ CREATESUBSCRIPTION/ CREATESUBSCRIPTION"
+} from "../generated/CREATESUBSCRIPTION/CREATESUBSCRIPTION"
 import {
   BuyToken,
   CancelledPresale,

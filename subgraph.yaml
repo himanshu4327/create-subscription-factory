@@ -8,7 +8,7 @@ dataSources:
     source:
       address: "0xB87c4e8C03c126434400707160918f08E7100727"
       abi: CREATESUBSCRIPTION
-      startBlock: 27913883
+      startBlock: 25614522
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
